@@ -3,6 +3,10 @@ var cameras = [];
 var player;
 
 function main() {
+  setTimeout(function(){
+    $('.loader').hide();
+  }, 500);
+
   cameras.push(new Camera('Camera 1', 'Garage', 'http://109.194.146.93:1935/h4ck4t0n/ch1.stream/manifest.m3u8', "cam0"));
   cameras.push(new Camera('Camera 2', 'Home', 'http://109.194.146.93:1935/h4ck4t0n/ch2.stream/manifest.m3u8', "cam1"));
   cameras.push(new Camera('Camera 3', 'Yard', 'https://vs.domru.ru/translation?id=27900743&guid=8ca70a5c1f6636a639ac&mode=hls', "cam2"));
@@ -13,9 +17,6 @@ function openVideo(id) {
     return cam.id == id;
   })[0];
   $('.ui.modal').children('.header').text(camera.name + ": " + camera.info);
-
-  //var current = player.currentSrc();
-  //var nowTime = player.currentTime();
 
   player.src({src: camera.url, type: 'application/x-mpegURL'});
 
@@ -83,14 +84,14 @@ function switcher(turn) {
 }
 
 function Key_Ok() {
-  openVideo();
+  var id = $(".active.card").attr("id");
+  openVideo(id);
 }
 
 function Key_Back() {
   $('.ui.modal')
     .modal('hide');
 }
-
 
 var Camera = function(name, info, url, htmlId) {
     this.name = name;
