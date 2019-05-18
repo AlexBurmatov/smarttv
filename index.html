@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="videojs/video-js.css" rel="stylesheet">
+	<script src="videojs/video.js"></script>
+	<script src="videojs/videojs-contrib-hls.js"></script>
+	<script src="webOSTVjs-1.1.0/webOSTV.js" charset="utf-8"></script>
+	<script src="webOSTVjs-1.1.0/webOSTV-dev.js" charset="utf-8"></script>
+	<script src="js/jquery-3.0.0.min.js"></script>
+	<script src="js/jquery.video-extend.js"></script>
+	<script src="js/semantic.min.js"></script>
+	<script src="js/app.js"></script>
+</head>
+
+<body>
+	<div class="main-screen">
+		<div id="camera-panel">
+			<div class="ui link cards">
+				<div id="cam0" class="ui active card" onclick='openVideo("cam0")'>
+					<a class="image" href="#">
+						<img src="./camera.jpg" class="screen">
+					</a>
+					<div class="content">
+						<a class="header" href="#">Camera 1</a>
+						<div class="meta">
+							<a>Garage</a>
+						</div>
+					</div>
+				</div>
+				<div id="cam1" class="ui card" onclick='openVideo("cam1")'>
+					<a class="image" href="#">
+						<img src="./camera.jpg" class="screen">
+					</a>
+					<div class="content">
+						<a class="header" href="#">Camera 2</a>
+						<div class="meta">
+							<a>Home</a>
+						</div>
+					</div>
+				</div>
+				<div id="cam2" class="ui card" onclick='openVideo("cam2")'>
+					<a class="image" href="#">
+						<img src="./camera.jpg" class="screen">
+					</a>
+					<div class="content">
+						<a class="header" href="#">Camera 3</a>
+						<div class="meta">
+							<a>Yard</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="ui modal">
+		<div class="header">Header</div>
+		<video id="my-player" class="video-js vjs-default-skin" controls preload="auto" width="640" height="268"
+			data-setup='{}'>
+			<source src="http://109.194.146.93:1935/h4ck4t0n/ch1.stream/manifest.m3u8" type="application/x-mpegURL">
+		</video>
+	</div>
+
+</body>
+
+</html>
